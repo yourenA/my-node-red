@@ -12,7 +12,8 @@
     "scripts": {
         "start": "node red.js flows_.json --userDir",
         "test": "grunt",
-        "build": "grunt build"
+        "build": "grunt build",
+        "pm2": "pm2 start pm2.json "
     },
     "bin": {
         "node-red": "./red.js",
