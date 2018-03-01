@@ -139,15 +139,15 @@
     <code>msg.payload</code> is used as the payload of the published message.
     If it contains an Object it will be converted to a JSON string before being sent.
     If it contains a binary Buffer the message will be published as-is.</p>
-    <p><code> msg.payload </ code>用作发布消息的有效载荷。
+    <p><code> msg.payload </code>用作发布消息的有效载荷。
      如果它包含一个Object，它将在发送之前转换为JSON字符串。
      如果它包含二进制缓冲区，则该消息将按原样发布。</p>
     <p>The topic used can be configured in the node or, if left blank, can be set by <code>msg.topic</code>.</p>
-    <p>所使用的主题可以在节点中配置，如果留空，可以通过<code> msg.topic </ code>进行设置。</p>
+    <p>所使用的主题可以在节点中配置，如果留空，可以通过<code> msg.topic </code>进行设置。</p>
     <p>Likewise the QoS and retain values can be configured in the node or, if left
     blank, set by <code>msg.qos</code> and <code>msg.retain</code> respectively. To clear a previously
     retained topic from the broker, send a blank message to that topic with the retain flag set.</p>
-    <p>同样，可以在节点中配置QoS和保留值，或者如果留空，则分别通过<code> msg.qos </ code>和<code> msg.retain </ code>进行设置。 要清除代理中先前保留的主题，请发送空白消息给设置了保留标志的主题。</p>
+    <p>同样，可以在节点中配置QoS和保留值，或者如果留空，则分别通过<code> msg.qos </code>和<code> msg.retain </code>进行设置。 要清除代理中先前保留的主题，请发送空白消息给设置了保留标志的主题。</p>
     <p>This node requires a connection to a MQTT broker to be configured. This is configured by clicking
     the pencil icon.</p>
     <p>此节点需要连接到要配置的MQTT代理。 这是通过点击铅笔图标配置的。</p>
@@ -279,7 +279,7 @@
     <p>连接到MQTT代理的配置。</p>
     <p>This configuration will create a single connection to the broker which can
        then be reused by <code>MQTT In</code> and <code>MQTT Out</code> nodes.</p>
-    <p>此配置将创建与代理的单个连接，然后可以通过<code> MQTT In </ code>和<code> MQTT Out </ code>节点重新使用该连接。</p>
+    <p>此配置将创建与代理的单个连接，然后可以通过<code> MQTT In </code>和<code> MQTT Out </code>节点重新使用该连接。</p>
     <p>The node will generate a random Client ID if one is not set and the
        node is configured to use a Clean Session connection. If a Client ID is set,
        it must be unique to the broker you are connecting to.</p>

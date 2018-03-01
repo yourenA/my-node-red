@@ -78,22 +78,17 @@
        The path can be fully specified, such as <code>/user</code>, or include
        named parameters that accept any value, such as <code>/user/:name</code>.
        When named parameters are used, their actual value in a request can be accessed under <code>msg.req.params</code>.</p>
-       <p>
-         节点将在配置的路径上侦听特定类型的请求。
-     路径可以完全指定，如<code> / user </ code>或include
-     命名参数接受任何值，如<code> / user /：name </ code>。
-     使用命名参数时，可以在<code> msg.req.params </ code>下访问它们在请求中的实际值。
-        </p>
+       <p>节点将在配置的路径上侦听特定类型的请求。路径可以完全指定，如<code> /user </code>或include命名参数接受任何值，如<code> / user /：name </code>。使用命名参数时，可以在<code> msg.req.params </code>下访问它们在请求中的实际值。</p>
     <p>For requests that include a body, such as a POST or PUT, the contents of
        the request is made available as <code>msg.payload</code>.</p>
        <p>对于包含正文（如POST或PUT）的请求，其内容为
-     该请求可作为<code> msg.payload </ code>使用。</p>
+     该请求可作为<code> msg.payload </code>使用。</p>
     <p>If the content type of the request can be determined, the body will be parsed to
        any appropriate type. For example, <code>application/json</code> will be parsed to
        its JavaScript object representation.</p>
     <p><b>Note:</b> this node does not send any response to the request. The flow
        must include an HTTP Response node to complete the request.</p>
-       <p>如果可以确定请求的内容类型，则主体将被解析为任何适当的类型。 例如，<code> application / json </ code>将被解析为其JavaScript对象表示。</p>
+       <p>如果可以确定请求的内容类型，则主体将被解析为任何适当的类型。 例如，<code> application / json </code>将被解析为其JavaScript对象表示。</p>
 </script>
 
 <script type="text/x-red" data-template-name="http response">
@@ -132,17 +127,17 @@
     <p>The <code>statusCode</code> and <code>headers</code> can also be set within
     the node itself. If a property is set within the node, it cannot be overridden
     by the corresponding message property.</p>
-    <p><code> statusCode </ code>和<code> headers </ code>也可以在节点本身中设置。 如果在该节点内设置了属性，则不会被相应的消息属性覆盖。</p>
+    <p><code> statusCode </code>和<code> headers </code>也可以在节点本身中设置。 如果在该节点内设置了属性，则不会被相应的消息属性覆盖。</p>
     <h4>Cookie handling</h4>
     <p>The <code>cookies</code> property must be an object of name/value pairs.
     The value can be either a string to set the value of the cookie with default
     options, or it can be an object of options.<p>
-    <p><code> cookies </ code>属性必须是名称/值对的对象。
+    <p><code> cookies </code>属性必须是名称/值对的对象。
      该值可以是用默认选项设置cookie值的字符串，也可以是选项对象。</p>
     <p>The following example sets two cookies - one called <code>name</code> with
     a value of <code>nick</code>, the other called <code>session</code> with a
     value of <code>1234</code> and an expiry set to 15 minutes.</p>
-    <p>以下示例将两个cookie（一个名为<code> name </ code>，其值为<code> nick </ code>，另一个名为<code> session </ code>）设置为<code> 1234 < / code>，并将到期时间设置为15分钟。</p>
+    <p>以下示例将两个cookie（一个名为<code> name </code>，其值为<code> nick </code>，另一个名为<code> session </code>）设置为<code> 1234 </code>，并将到期时间设置为15分钟。</p>
     <pre>
 msg.cookies = {
     name: 'nick',

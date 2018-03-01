@@ -58,10 +58,10 @@
 <script type="text/x-red" data-help-name="udp in">
     <p>A UDP input node, that produces a <code>msg.payload</code> containing a
     Buffer, string, or base64 encoded string. Supports multicast.</p>
-    <p>一个UDP输入节点，它产生一个包含缓冲区，字符串或base64编码字符串的<code> msg.payload </ code>。 支持多播。</p>
+    <p>一个UDP输入节点，它产生一个包含缓冲区，字符串或base64编码字符串的<code> msg.payload </code>。 支持多播。</p>
     <p>It also provides <code>msg.ip</code> and <code>msg.port</code> set to the
     ip address and port from which the message was received.</p>
-    <p>它还提供了<code> msg.ip </ code>和<code> msg.port </ code>设置为接收邮件的IP地址和端口。</p>
+    <p>它还提供了<code> msg.ip </code>和<code> msg.port </code>设置为接收邮件的IP地址和端口。</p>
     <p><b>Note</b>: On some systems you may need root or administrator access to use
     ports below 1024 and/or broadcast.</p>
 </script>
@@ -170,9 +170,9 @@
 
 <script type="text/x-red" data-help-name="udp out">
     <p>This node sends <code>msg.payload</code> to the designated UDP host and port. Supports multicast.</p>
-    <p>该节点将<code> msg.payload </ code>发送到指定的UDP主机和端口。 支持多播。</p>
+    <p>该节点将<code> msg.payload </code>发送到指定的UDP主机和端口。 支持多播。</p>
     <p>You may also use <code>msg.ip</code> and <code>msg.port</code> to set the destination values, but the statically configured values have precedence.</p>
-       <p>您也可以使用<code> msg.ip </ code>和<code> msg.port </ code>来设置目标值，但静态配置的值有优先权。</p>
+       <p>您也可以使用<code> msg.ip </code>和<code> msg.port </code>来设置目标值，但静态配置的值有优先权。</p>
     <p>If you select broadcast either set the address to the local broadcast ip address, or maybe try 255.255.255.255, which is the global broadcast address.</p>
        <p>如果您选择广播，请将地址设置为本地广播IP地址，或者尝试使用全球广播地址255.255.255.255。</p>
     <p><b>Note</b>: On some systems you may need to be root to use ports below 1024 and/or broadcast.</p>
