@@ -1,0 +1,21 @@
+[
+  {
+    "id": "f10ad7a2.237088",
+    "type": "tab",
+    "label": "流程1",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "6b943ed2.b29e8",
+    "type": "catch",
+    "z": "f10ad7a2.237088",
+    "name": "",
+    "scope": null,
+    "x": 420,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  }
+]
