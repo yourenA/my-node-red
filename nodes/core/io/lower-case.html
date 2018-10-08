@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    /**
+     * js：RED.nodes.registerType("my-lower-case",LowerCaseNode);
+     * 第二个参数就是{} 就是传入LowerCaseNode的配置参数
+     * */
+    RED.nodes.registerType('my-lower-case',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {//键名与'node-input-键名'对应
+            name: {value:"默认name"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"lower-case";
+        }
+    });
+</script>
+
+<!--data-template-name 双击节点弹出来的配置页面-->
+<script type="text/x-red" data-template-name="my-lower-case">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<!--data-help-name 点击节点侧边栏显示的帮助信息-->
+<script type="text/x-red" data-help-name="my-lower-case">
+    <p>A simple node that converts the message payloads into all my-lower-case characters</p>
+</script>

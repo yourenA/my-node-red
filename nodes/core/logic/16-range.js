@@ -28,7 +28,8 @@ module.exports = function(RED) {
         var node = this;
 
         this.on('input', function (msg) {
-            var value = RED.util.getMessageProperty(msg,node.property);
+            var value = RED.util.getMessageProperty(msg,node.property);//从msg中获取node.property（payload）中定义的属性，即msg.payload，
+            node.log(RED._("value")+": "+value);
             if (value !== undefined) {
                 var n = Number(value);
                 if (!isNaN(n)) {
@@ -42,7 +43,7 @@ module.exports = function(RED) {
                     }
                     value = ((n - node.minin) / (node.maxin - node.minin) * (node.maxout - node.minout)) + node.minout;
                     if (node.round) { value = Math.round(value); }
-                    RED.util.setMessageProperty(msg,node.property,value);
+                    RED.util.setMessageProperty(msg,node.property,value);//设置msg的node.property（payload）中定义的属性，即设置msg.payload属性值为value，
                     node.send(msg);
                 }
                 else { node.log(RED._("range.errors.notnumber")+": "+value); }
