@@ -327,6 +327,7 @@ this.status({fill:"red",shape:"ring",text:"disconnected"});
 ```
 
 #### 常用```RED.util```
+
 * RED.util.getMessageProperty(msg,node.property)
 从msg中获取node.property中定义的属性
 
