@@ -1,0 +1,83 @@
+[
+  {
+    "id": "78db0830.76c898",
+    "type": "tab",
+    "label": "流程1",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "fe1ad3a6.9a9bd",
+    "type": "http in",
+    "z": "78db0830.76c898",
+    "name": "",
+    "url": "",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 190,
+    "y": 280,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f54bfd97.4999e",
+    "type": "http response",
+    "z": "78db0830.76c898",
+    "name": "",
+    "statusCode": "",
+    "headers": {},
+    "x": 940,
+    "y": 260,
+    "wires": []
+  },
+  {
+    "id": "b1674d5b.c2aee",
+    "type": "debug",
+    "z": "78db0830.76c898",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "x": 740,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "2dc40589.68195a",
+    "type": "inject",
+    "z": "78db0830.76c898",
+    "name": "",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 230,
+    "y": 180,
+    "wires": [
+      [
+        "afcb3391.5c58a"
+      ]
+    ]
+  },
+  {
+    "id": "afcb3391.5c58a",
+    "type": "debug",
+    "z": "78db0830.76c898",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "x": 660,
+    "y": 200,
+    "wires": []
+  }
+]

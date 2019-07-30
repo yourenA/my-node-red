@@ -1,5 +1,4 @@
-# Node-RED
-
+当前文档基于```Node-RED V0.18```
 
 ## 全局启动
 
@@ -9,6 +8,8 @@
 
 ## 本地项目启动
 
+>使用nodemon修改js文件自动重启程序
+
 1. `"start": "node red.js flows_.json --userDir"` --userDir 更改Node-RED数据存储目录 ，不同的 --userDir 会渲染不同的流程
 2. 每次按“部署”按钮都会更新userDir中定义的文件
 3. `"pm2": "pm2 start pm2.json "` pm2 自动开机启动
@@ -17,11 +18,13 @@
 ## 添加节点
 1. `npm install <npm-package-name>`
 
+> 推荐使用npm安装新节点。使用界面自带的安装节点如果依赖没有正确安装，会出现错误
+
 ### 安装单个节点文件
-通过将节点.js和.html 文件复制到nodes用户数据目录中的目录来安装节点
+通过将节点.js和.html 文件复制到```nodes/core```用户数据目录中的目录来安装节点
 
 ### 登陆相关设置
-在 setting.js 文件 adminAuth 中设置相关用户和权限，在user数组添加相关用户
+在```setting.js```文件 adminAuth 中设置相关用户和权限，在user数组添加相关用户
 
 * 生成密码哈希
   要生成合适的密码哈希，可以使用node-red-admin 命令行工具：
@@ -32,11 +35,11 @@
 1. *完全访问权限
 2. read - 只读访问权限
 ```
-       {
-           username: "read",
-           password: "$2a$08$sheM.rOYBHCjOf7EILAZyeOnCnx5xWU/bmjOdOPtojASWF/jouuIa",
-           permissions: "read"
-       }
+{
+    username: "read",
+    password: "$2a$08$sheM.rOYBHCjOf7EILAZyeOnCnx5xWU/bmjOdOPtojASWF/jouuIa",
+    permissions: "read"
+}
 ```
 * 令牌到期
 默认情况下，访问令牌在创建后7天后过期。我们目前不支持刷新令牌以延长此期限。
@@ -176,7 +179,14 @@ node.status({fill:"green",shape:"dot",text:"connected"});
 node.status({text:"Just text status"});
 node.status({});   // to clear the status
 ```
- 
+## 创建子流程
+在右上角操作按钮上可以添加子流程。添加子流程后，左侧操作栏上会出现子流程节点。
+
+![image](http://106.13.7.195:3000/images/markdown/image-1562827520420-1562827496.png)
+
+一个子流程可以设置0/1个输入，可以设置0/n个输出。
+
+
  
 ## 创建节点
 
@@ -328,10 +338,10 @@ this.status({fill:"red",shape:"ring",text:"disconnected"});
 
 #### 常用```RED.util```
 
-* RED.util.getMessageProperty(msg,node.property)
+* ```RED.util.getMessageProperty(msg,node.property)```
 从msg中获取node.property中定义的属性
 
-* ED.util.setMessageProperty(msg,node.property,value);
+* ```RED.util.setMessageProperty(msg,node.property,value);//可以被后面的msg接收```
 设置msg的node.property（payload）中定义的属性，即设置msg.payload属性值为value，可以设置不同msg.property,然后发送出去
 
 
@@ -411,7 +421,7 @@ defaults: {
            $("#node-input-property").typedInput({default:'msg',types:['msg']});
         }
 ```
-`typedInput({default:'msg',types:['msg'] })` 替换常规<input>，允许选择值的类型，包括字符串，数字和布尔类型的选项。
+`typedInput({default:'msg',types:['msg'] })` 替换常规input，允许选择值的类型，包括字符串，数字和布尔类型的选项。
 - msg	一个msg.属性表达
 - flow	一个flow.属性表达
 - global	一个global.属性表达
@@ -465,7 +475,7 @@ this.status({fill:"green",shape:"dot",text:"connected"});
 
 配置节点的定义方式与其他节点相同。有两个主要区别：
 * 它的category属性设置为config
-* 编辑模板<input>元素有idnode-config-input-<propertyname>
+* 编辑模板input元素有idnode-config-input-<propertyname>
 
 server.html
 ```
@@ -512,7 +522,7 @@ defaults: {
    server: {value:"", type:"remote-server"},
 },
 ```
-编辑器将此<input>元素替换<select>为使用配置节点的可用实例填充的元素，以及用于打开配置节点编辑对话框的按钮。
+编辑器将此input元素替换select元素为使用配置节点的可用实例填充的元素，以及用于打开配置节点编辑对话框的按钮。
 ```
   <div class="form-row">
         <label for="node-input-broker"><i class="fa fa-globe"></i> <span data-i18n="mqtt.label.broker"></span></label>
@@ -540,3 +550,30 @@ module.exports = function(RED) {
     RED.nodes.registerType("my-node",MyNode);
 }
 ```
+
+## v0.20修改内容
+* 侧边栏显示的帮助信息 在```locales```目录下
+
+## node-red封装循环库```node-red-contrib-actionflows```
+项目地址:https://github.com/Steveorevo/node-red-contrib-actionflows
+> actionIn 的名称要以action的名称开头。如action名称为"get",那么actionIn的名称要设置为"get xxx"，如果设置为"get2 xxx"，那么这个actionIn流程将不会执行。
+
+使用场景:
+
+#### 1. 流式操作
+  
+![image](https://raw.githubusercontent.com/Steveorevo/node-red-contrib-actionflows/master/actionflows/demo/basic2.png)
+#### 2. 嵌套
+  
+![image](https://raw.githubusercontent.com/Steveorevo/node-red-contrib-actionflows/master/actionflows/demo/nested.gif)
+#### 3. 循环
+  
+![image](https://raw.githubusercontent.com/Steveorevo/node-red-contrib-actionflows/master/actionflows/demo/loop.png)
+
+#### 优先级
+  
+默认情况下，序列顺序是按创建顺序排列的，但可以使用action in节点的Priority属性进行更改。Priority越小，越先执行.Priority相同，先创建的先执行。
+
+#### 作用域
+  
+包括global，protected和private三种作用域
