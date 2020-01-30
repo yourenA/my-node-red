@@ -62,7 +62,7 @@
     "mqtt": "2.15.1",
     "multer": "1.3.0",
     "mustache": "2.3.0",
-    "node-red": "^0.19.3",
+    "node-red": "^1.0.3",
     "node-red-contrib-actionflows": "^2.0.3",
     "node-red-contrib-ds18b20-sensor": "^1.3.6",
     "node-red-contrib-exit": "0.0.2",
